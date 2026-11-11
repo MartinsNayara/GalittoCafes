@@ -1,0 +1,100 @@
+:root {
+  --brown: #4b3529;
+  --brown-soft: #725747;
+  --green: #536b55;
+  --green-dark: #405743;
+  --beige: #f3eadb;
+  --cream: #fffdf9;
+  --line: #e7dccb;
+  --muted: #887b6e;
+  --shadow: 0 12px 32px rgba(75, 53, 41, .08);
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--brown);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.9), transparent 55%),
+    var(--beige);
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.page {
+  width: min(100% - 36px, 470px);
+  margin: 0 auto;
+  padding: 54px 0 28px;
+}
+.profile { text-align: center; }
+.brand-mark {
+  width: 112px; height: 112px; margin: 0 auto 22px;
+  display: grid; place-items: center; position: relative;
+  border: 1px solid rgba(75,53,41,.22); border-radius: 50%;
+  background: linear-gradient(145deg, #e9ddc9, #d5c3a7);
+  box-shadow: 0 10px 22px rgba(75,53,41,.12), inset 0 0 0 5px rgba(255,253,249,.72);
+}
+.brand-monogram {
+  font-family: "Playfair Display", serif;
+  font-size: 58px; line-height: 1; color: var(--green-dark);
+}
+.brand-leaf {
+  position: absolute; right: -3px; bottom: 5px;
+  width: 28px; height: 28px; display: grid; place-items: center;
+  border-radius: 50%; color: var(--cream); background: var(--green);
+  border: 3px solid var(--beige); font-size: 12px;
+}
+.eyebrow {
+  margin: 0 0 8px; color: var(--green); font-size: 10px;
+  font-weight: 700; letter-spacing: .19em;
+}
+h1 {
+  margin: 0; font-family: "Playfair Display", serif;
+  font-size: clamp(31px, 8vw, 38px); letter-spacing: -.035em;
+}
+.tagline { margin: 9px 0 5px; font-size: 15px; font-weight: 600; color: var(--brown-soft); }
+.intro { max-width: 340px; margin: 0 auto; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.links { display: grid; gap: 13px; margin-top: 34px; }
+.link-card {
+  min-height: 78px; display: flex; align-items: center; gap: 14px;
+  padding: 13px 17px; border: 1px solid var(--line); border-radius: 17px;
+  background: rgba(255,253,249,.88); text-decoration: none;
+  box-shadow: 0 4px 12px rgba(75,53,41,.035);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.link-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: #c8b69d; }
+.link-card:focus-visible { outline: 3px solid rgba(83,107,85,.35); outline-offset: 3px; }
+.link-primary {
+  min-height: 86px; color: #fffdf9; background: var(--green);
+  border-color: var(--green); box-shadow: 0 9px 20px rgba(64,87,67,.18);
+}
+.link-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
+.link-icon {
+  flex: 0 0 43px; width: 43px; height: 43px; display: grid; place-items: center;
+  border-radius: 13px; color: var(--green); background: #edf1e9;
+}
+.link-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.link-icon .dot { fill: currentColor; stroke: none; }
+.link-icon.instagram { color: #8b6651; background: #f4ece2; }
+.link-icon.website { color: var(--green); background: #edf1e9; }
+.link-primary .link-icon { color: var(--green-dark); background: #f6f2e9; }
+.link-copy { display: grid; gap: 4px; min-width: 0; flex: 1; }
+.link-copy strong { font-size: 14px; font-weight: 700; }
+.link-copy small { color: var(--muted); font-size: 11px; line-height: 1.35; }
+.link-primary .link-copy small { color: rgba(255,253,249,.78); }
+.arrow { color: #a39482; font-size: 25px; line-height: 1; }
+.link-primary .arrow { color: #fffdf9; font-size: 19px; }
+.footer { text-align: center; margin-top: 42px; }
+.footer-line { width: 48px; height: 2px; margin: 0 auto 17px; background: #c4b398; }
+.footer-brand { margin: 0; font-size: 10px; font-weight: 700; letter-spacing: .22em; color: var(--green); }
+.footer-note { margin: 8px 0 19px; font-family: "Playfair Display", serif; font-size: 14px; color: var(--brown-soft); }
+.copyright { margin: 0; color: #9b8e80; font-size: 10px; }
+@media (max-width: 380px) {
+  .page { width: min(100% - 28px, 470px); padding-top: 38px; }
+  .link-card { padding: 12px; gap: 11px; }
+  .link-copy strong { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
